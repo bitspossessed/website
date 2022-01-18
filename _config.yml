@@ -1,0 +1,6 @@
+title: bitspossessed
+description: Some description about us
+sass:
+  sass_dir: assets/styles
+  style: compressed
+markdown: kramdown
