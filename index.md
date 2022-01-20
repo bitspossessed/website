@@ -2,4 +2,4 @@
 layout: default
 ---
 
-<canvas class="background" id="background"></canvas>
+# Hello, Bits!

@@ -1,0 +1,19 @@
+:root {
+  --color-main: white;
+  --color-purple: rgb(177, 0, 255);
+  --color-blue: rgb(17, 22, 200);
+  --color-black: rgb(2, 0, 36);
+}
+
+body {
+  background-image: linear-gradient(180deg, var(--color-purple) 0%, var(--color-blue) 35%, var(--color-black) 100%);
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--color-main);
+  font-family: "Share Tech Mono", monospace;
+  font-size: 18px;
+}
+
+a {
+  color: var(--color-main);
+}

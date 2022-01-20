@@ -1,7 +1,5 @@
 title: bitspossessed
+# @TODO: This needs to be changed to the final URL before we publish the website
 url: https://bitspossessed.github.io/website
 description: Some description about us
-sass:
-  sass_dir: assets/styles
-  style: compressed
 markdown: kramdown
