@@ -5,17 +5,60 @@
   --color-black: rgb(2, 0, 36);
 }
 
+html,
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+}
+
 body {
   background-image: linear-gradient(180deg, var(--color-purple) 0%, var(--color-blue) 35%, var(--color-black) 100%);
   background-size: cover;
   background-attachment: fixed;
   color: var(--color-main);
   font-family: "Share Tech Mono", monospace;
-  font-size: 18px;
+  font-size: 28px;
 }
 
 a {
   color: var(--color-main);
+  text-decoration: none;
+  border-bottom: 3px solid var(--color-main);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+}
+
+header,
+main,
+footer {
+  margin: 2em;
+}
+
+header {
+  text-align: center;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 40em;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .navigation {
@@ -26,8 +69,16 @@ a {
 
 .navigation-item {
   display: inline-block;
+  margin-top: 0.5em;
+  margin-right: 0.5em;
 }
 
-.navigation-item + .navigation-item {
-  margin-left: .5em;
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.25;
 }
