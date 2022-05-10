@@ -17,3 +17,17 @@ body {
 a {
   color: var(--color-main);
 }
+
+.navigation {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation-item {
+  display: inline-block;
+}
+
+.navigation-item + .navigation-item {
+  margin-left: .5em;
+}
