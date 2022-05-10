@@ -1,4 +1,4 @@
-# website
+# bitspossessed website
 
 Home of [bitspossessed.org](https://bitspossessed.org), built with [jekyll](https://jekyllrb.com/).
 
@@ -24,3 +24,7 @@ bundle exec jekyll serve
 # Build the static website in `_site` folder
 bundle exec jekyll build
 ```
+
+## License
+
+[`UNIVERSAL PUBLIC DOMAIN LICENSE`](LICENSE)
