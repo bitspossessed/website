@@ -10,12 +10,12 @@ class Tree {
     this.string = "lL[+L][-L]";
     this.branchTexture;
     this.treePosY = 0;
-    this.iterations = 10;
+    this.iterations = 5;
     this.angleMean = (20 / 180) * Math.PI;
     this.angleVariation = (10 / 180) * Math.PI;
-    this.length = 30;
-    this.lengthReduction = 0.8;
-    this.thickness = 15;
+    this.length = 20;
+    this.lengthReduction = 0.4;
+    this.thickness = 10;
     this.thicknessReduction = 0.65;
     this.rules = {
       L: {
@@ -156,8 +156,10 @@ class Tree {
   }
 }
 
-const canvas = document.getElementById('canvas');
+const canvas = document.getElementById('responsive-canvas');
 const tree = new Tree(canvas);
+const heightRatio = 1.5;
+canvas.height = canvas.width * heightRatio;
 
 window.setInterval(() => {
   tree.draw();
