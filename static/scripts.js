@@ -13,9 +13,9 @@ class Tree {
     this.iterations = 5;
     this.angleMean = (20 / 180) * Math.PI;
     this.angleVariation = (10 / 180) * Math.PI;
-    this.length = 30;
-    this.lengthReduction = 0.8;
-    this.thickness = 15;
+    this.length = 20;
+    this.lengthReduction = 0.4;
+    this.thickness = 10;
     this.thicknessReduction = 0.65;
     this.rules = {
       L: {
