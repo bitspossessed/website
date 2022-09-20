@@ -156,8 +156,10 @@ class Tree {
   }
 }
 
-const canvas = document.getElementById('canvas');
+const canvas = document.getElementById('responsive-canvas');
 const tree = new Tree(canvas);
+const heightRatio = 1.5;
+canvas.height = canvas.width * heightRatio;
 
 window.setInterval(() => {
   tree.draw();

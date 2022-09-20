@@ -73,7 +73,7 @@ footer {
   margin-right: 0.5em;
 }
 
-#canvas {
+#responsive-canvas {
   position: fixed;
   top: 0;
   left: 0;
@@ -81,4 +81,9 @@ footer {
   height: 100%;
   z-index: -1;
   opacity: 0.25;
+  width: 100%;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
