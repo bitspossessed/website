@@ -10,7 +10,7 @@ class Tree {
     this.string = "lL[+L][-L]";
     this.branchTexture;
     this.treePosY = 0;
-    this.iterations = 10;
+    this.iterations = 5;
     this.angleMean = (20 / 180) * Math.PI;
     this.angleVariation = (10 / 180) * Math.PI;
     this.length = 30;
