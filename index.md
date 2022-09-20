@@ -2,6 +2,8 @@
 permalink: /
 ---
 
+{% include base.html %}
+
 # Hello! 🍃
 
 <canvas id="canvas"></canvas>
