@@ -74,19 +74,18 @@ footer {
   margin-left: 0.5em;
 }
 
-#responsive-canvas {
+#shapes {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 50%;
+  top: -25px;
+  right: 0;
+  bottom: 0;
+  left: -25px;
   z-index: -1;
-  opacity: 0.25;
+}
+
+#shapes svg {
   width: 100%;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: -webkit-crisp-edges;
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
+  height: 100%;
 }
 
 .intro {
