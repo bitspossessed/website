@@ -18,13 +18,13 @@ body {
   background-attachment: fixed;
   color: var(--color-main);
   font-family: "Share Tech Mono", monospace;
-  font-size: 28px;
+  font-size: 18px;
 }
 
 a {
   color: var(--color-main);
   text-decoration: none;
-  border-bottom: 3px solid var(--color-main);
+  border-bottom: 2px solid var(--color-main);
 }
 
 h1,
@@ -71,6 +71,7 @@ footer {
   display: inline-block;
   margin-top: 0.5em;
   margin-right: 0.5em;
+  margin-left: 0.5em;
 }
 
 #responsive-canvas {
@@ -86,4 +87,9 @@ footer {
   image-rendering: -webkit-crisp-edges;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
+}
+
+.intro {
+  font-size: 200px;
+  text-align: center;
 }
