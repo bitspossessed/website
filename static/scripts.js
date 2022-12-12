@@ -1,3 +1,5 @@
+// List of possible css selectors for shapes. "shape-" will be prefixed
+// automatically.
 const SHAPE_CLASS_NAMES = [
   'bottom-center',
   'bottom-left',
@@ -9,26 +11,29 @@ const SHAPE_CLASS_NAMES = [
   'top-right',
 ];
 
+// Dimensions of each shape. Note that they're responsive and the sizes will
+// change depending on the screen.
 const SHAPE_WIDTH = 250;
 const SHAPE_HEIGHT = 250;
+
+// Randomness factor for each shape. The higher the more distorted it will get,
+// the lower it will look like a square.
 const SHAPE_RANDOMNESS = 50;
 
+// Number of random shapes per page. This is a randomized range.
 const MIN_SHAPE_COUNT = 0;
 const MAX_SHAPE_COUNT = 5;
 
+// Define in which rhythm shapes can change. This is a randomized range.
 const MIN_SHAPE_CHANGE = 1000 * 1; // in ms
 const MAX_SHAPE_CHANGE = 1000 * 2; // in ms
 
-/**
- * Helper method returning a random number between a minimum and maximum
- **/
+// Helper method returning a random number between a minimum and maximum.
 function randomRange(min, max) {
   return Math.round(min + Math.random() * (max - min));
 }
 
-/**
- * Helper method randomizing an array in-place.
- **/
+// Helper method randomizing an array in-place.
 function shuffleArray(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
