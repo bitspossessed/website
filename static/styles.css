@@ -52,6 +52,10 @@ footer {
   text-align: center;
 }
 
+svg {
+  overflow: visible;
+}
+
 .container {
   margin: 0 auto;
   max-width: 40em;
@@ -74,18 +78,57 @@ footer {
   margin-left: 0.5em;
 }
 
-#shapes {
+.shape {
   position: fixed;
-  top: -25px;
-  right: 0;
-  bottom: 0;
-  left: -25px;
-  z-index: -1;
+  z-index: -100;
+  width: 50%;
+  height: 50%;
 }
 
-#shapes svg {
-  width: 100%;
-  height: 100%;
+@media (max-width: 420px) {
+  .shape {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+.shape path {
+  transition: 10s linear;
+}
+
+.shape-top-center {
+  top: -10%;
+  left: 33%;
+}
+
+.shape-top-left {
+  top: -25%;
+  left: -25%;
+}
+
+.shape-top-right {
+  top: -15%;
+  right: -25%;
+}
+
+.shape-middle-left {
+  top: 50%;
+  left: -25%;
+}
+
+.shape-middle-right {
+  top: 30%;
+  right: -25%;
+}
+
+.shape-bottom-left {
+  bottom: -15%;
+  left: -25%;
+}
+
+.shape-bottom-right {
+  bottom: -10%;
+  right: -20%;
 }
 
 .intro {

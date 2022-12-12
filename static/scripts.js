@@ -1,5 +1,41 @@
+const SHAPE_CLASS_NAMES = [
+  'bottom-center',
+  'bottom-left',
+  'bottom-right',
+  'middle-left',
+  'middle-right',
+  'top-center',
+  'top-left',
+  'top-right',
+];
+
+const SHAPE_WIDTH = 250;
+const SHAPE_HEIGHT = 250;
+const SHAPE_RANDOMNESS = 50;
+
+const MIN_SHAPE_COUNT = 0;
+const MAX_SHAPE_COUNT = 5;
+
+const MIN_SHAPE_CHANGE = 1000 * 1; // in ms
+const MAX_SHAPE_CHANGE = 1000 * 2; // in ms
+
+/**
+ * Helper method returning a random number between a minimum and maximum
+ **/
 function randomRange(min, max) {
   return Math.round(min + Math.random() * (max - min));
+}
+
+/**
+ * Helper method randomizing an array in-place.
+ **/
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+
+  return arr;
 }
 
 function generateRandomPath(width, height, randomness) {
@@ -92,16 +128,16 @@ function generateRandomPath(width, height, randomness) {
 }
 
 function getShapeElement(options) {
-  const { width, height, randomness, colors } = options;
-
-  // Generate a "random" rectangular shape
-  const shape = generateRandomPath(width, height, randomness);
+  const { width, height, randomness, colors, className } = options;
 
   // We can only assign ids once, so let's make sure they are unique
   let randomId = `gradient-${Date.now() + randomRange(0, 100)}`;
 
   // Create the main svg element holding the shape and gradient information
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+  svg.classList.add('shape');
+  svg.classList.add(`shape-${className}`);
 
   // Generate the gradient definition
   const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
@@ -119,7 +155,24 @@ function getShapeElement(options) {
   // Add the path definition to the svg element
   const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
   path.setAttribute('fill', `url(#${randomId})`);
-  path.setAttribute('d', shape);
+
+  const changeShape = () => {
+    const shape = generateRandomPath(width, height, randomness);
+    path.setAttribute('d', shape);
+  };
+
+  // Set an initial shape
+  changeShape();
+
+  // Change it directly after to already make it an animation
+  window.setTimeout(() => {
+    changeShape();
+  }, 1);
+
+  // Do it after a while again, so its in constant change
+  window.setInterval(() => {
+    changeShape();
+  }, randomRange(MIN_SHAPE_CHANGE, MAX_SHAPE_CHANGE));
 
   svg.appendChild(defs);
   svg.appendChild(path);
@@ -127,6 +180,10 @@ function getShapeElement(options) {
   return svg;
 }
 
+// We randomize the class names before so it looks a little different every time
+const classNames = shuffleArray(SHAPE_CLASS_NAMES);
+
+// Let's generate some random shapes and put them in the background of the page
 const shapes = document.getElementById('shapes');
 
 const colorElectricViolet = '#B100FF'; //rgb(177, 0, 255)
@@ -245,11 +302,14 @@ function generateAnaloguesColors(hexColor) {
 generateShadesColors('#ed6ea0');
 generateAnaloguesColors('#ed6ea0');
 
-shapes.appendChild(
-  getShapeElement({
-    width: 500,
-    height: 500,
-    randomness: 50,
-    colors: generateAnaloguesColors('#ed6ea0'),
-  }),
-);
+for (let i = 0; i < randomRange(MIN_SHAPE_COUNT, MAX_SHAPE_COUNT); i += 1) {
+  shapes.appendChild(
+    getShapeElement({
+      width: SHAPE_WIDTH,
+      height: SHAPE_HEIGHT,
+      randomness: SHAPE_RANDOMNESS,
+      className: classNames[i % classNames.length],
+      colors: generateAnaloguesColors('#ed6ea0'),
+    }),
+  );
+}
