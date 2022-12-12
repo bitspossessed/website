@@ -50,7 +50,7 @@ function generateRandomPath(width, height, randomness) {
   path.push({ x: path[1].x, y: path[1].y });
 
   // Calculate catmull rom spline from the control points to smoothen the shape
-  let d = [];
+  const d = [];
   path.forEach((coord, index, array) => {
     const p = [];
 
@@ -133,6 +133,7 @@ const colorElectricViolet = '#B100FF'; //rgb(177, 0, 255)
 const colorPersianBlue = '#1116C8'; //rgb(17, 22, 200)
 const colorBlackRussian = '#020024'; //rgb(2, 0, 36)
 const colorDeepBlush = '#ED6EA0'; //rgb(237, 110, 160)
+const colorApricot = '#ec8c69';
 
 function hslToHex(h, s, l) {
   l /= 100;
