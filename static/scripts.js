@@ -1,5 +1,5 @@
 function randomRange(min, max) {
-  return Math.round(min + (Math.random() * (max - min)));
+  return Math.round(min + Math.random() * (max - min));
 }
 
 function generateRandomPath(width, height, randomness) {
@@ -50,13 +50,13 @@ function generateRandomPath(width, height, randomness) {
   path.push({ x: path[1].x, y: path[1].y });
 
   // Calculate catmull rom spline from the control points to smoothen the shape
-  let d = [];
+  const d = [];
   path.forEach((coord, index, array) => {
     const p = [];
 
     if (index === 0) {
       d.push(`M${coord.x},${coord.y}`);
-      p.push(array[array.length - 3])
+      p.push(array[array.length - 3]);
       p.push(array[index]);
       p.push(array[index + 1]);
       p.push(array[index + 2]);
@@ -83,7 +83,9 @@ function generateRandomPath(width, height, randomness) {
     });
     bp.push({ x: p[2].x, y: p[2].y });
 
-    d.push(`C${bp[1].x},${bp[1].y},${bp[2].x},${bp[2].y},${bp[3].x},${bp[3].y}`);
+    d.push(
+      `C${bp[1].x},${bp[1].y},${bp[2].x},${bp[2].y},${bp[3].x},${bp[3].y}`,
+    );
   });
 
   d.push('Z');
@@ -105,7 +107,10 @@ function getShapeElement(options) {
 
   // Generate the gradient definition
   const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-  const linearGradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+  const linearGradient = document.createElementNS(
+    'http://www.w3.org/2000/svg',
+    'linearGradient',
+  );
   linearGradient.setAttribute('id', randomId);
 
   colors.forEach((color, index) => {
@@ -128,9 +133,11 @@ function getShapeElement(options) {
 }
 
 const shapes = document.getElementById('shapes');
-shapes.appendChild(getShapeElement({
-  width: 500,
-  height: 500,
-  randomness: 50,
-  colors: ['#ed6ea0', '#ec8c69'],
-}));
+shapes.appendChild(
+  getShapeElement({
+    width: 500,
+    height: 500,
+    randomness: 50,
+    colors: ['#ed6ea0', '#ec8c69'],
+  }),
+);
