@@ -185,12 +185,6 @@ function getShapeElement(options) {
   return svg;
 }
 
-// We randomize the class names before so it looks a little different every time
-const classNames = shuffleArray(SHAPE_CLASS_NAMES);
-
-// Let's generate some random shapes and put them in the background of the page
-const shapes = document.getElementById('shapes');
-
 const colorElectricViolet = '#B100FF'; //rgb(177, 0, 255)
 const colorPersianBlue = '#1116C8'; //rgb(17, 22, 200)
 const colorBlackRussian = '#020024'; //rgb(2, 0, 36)
@@ -307,6 +301,11 @@ function generateAnaloguesColors(hexColor) {
 generateShadesColors('#ed6ea0');
 generateAnaloguesColors('#ed6ea0');
 
+// We randomize the class names before so it looks a little different every time
+const classNames = shuffleArray(SHAPE_CLASS_NAMES);
+
+// Let's generate some random shapes and put them in the background of the page
+const shapes = document.getElementById('shapes');
 for (let i = 0; i < randomRange(MIN_SHAPE_COUNT, MAX_SHAPE_COUNT); i += 1) {
   shapes.appendChild(
     getShapeElement({
