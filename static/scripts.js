@@ -1,3 +1,11 @@
+const COLORS = {
+  electricViolet: '#B100FF', // rgb(177, 0, 255)
+  persianBlue: '#1116C8', // rgb(17, 22, 200)
+  blackLabrador: '#020024', // rgb(2, 0, 36)
+  deepBlush: '#ED6EA0', // rgb(237, 110, 160)
+  apricot: '#ec8c69',
+};
+
 // List of possible css selectors for shapes. "shape-" will be prefixed
 // automatically.
 const SHAPE_CLASS_NAMES = [
@@ -124,7 +132,9 @@ function generateRandomPath(width, height, randomness) {
     });
     bp.push({ x: p[2].x, y: p[2].y });
 
-    d.push(`C${bp[1].x},${bp[1].y},${bp[2].x},${bp[2].y},${bp[3].x},${bp[3].y}`);
+    d.push(
+      `C${bp[1].x},${bp[1].y},${bp[2].x},${bp[2].y},${bp[3].x},${bp[3].y}`,
+    );
   });
 
   d.push('Z');
@@ -146,7 +156,10 @@ function getShapeElement(options) {
 
   // Generate the gradient definition
   const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-  const linearGradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+  const linearGradient = document.createElementNS(
+    'http://www.w3.org/2000/svg',
+    'linearGradient',
+  );
   linearGradient.setAttribute('id', randomId);
 
   colors.forEach((color, index) => {
@@ -185,40 +198,25 @@ function getShapeElement(options) {
   return svg;
 }
 
-const colorElectricViolet = '#B100FF'; //rgb(177, 0, 255)
-const colorPersianBlue = '#1116C8'; //rgb(17, 22, 200)
-const colorBlackRussian = '#020024'; //rgb(2, 0, 36)
-const colorDeepBlush = '#ED6EA0'; //rgb(237, 110, 160)
-const colorApricot = '#ec8c69';
-
-function hslToHex(h, s, l) {
-  l /= 100;
-  const a = (s * Math.min(l, 1 - l)) / 100;
-  const f = (n) => {
-    const k = (n + h / 30) % 12;
-    const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
-    return Math.round(255 * color)
-      .toString(16)
-      .padStart(2, '0'); // convert to Hex and prefix "0" if needed
-  };
-  return `#${f(0)}${f(8)}${f(4)}`;
-}
-
 function hexToHSL(hex) {
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  r = parseInt(result[1], 16);
-  g = parseInt(result[2], 16);
-  b = parseInt(result[3], 16);
-  (r /= 255), (g /= 255), (b /= 255);
-  var max = Math.max(r, g, b),
-    min = Math.min(r, g, b);
-  var h,
-    s,
-    l = (max + min) / 2;
-  if (max == min) {
+  // Extract hex-values and convert to 0.0 - 1.0 RGB ranges
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  const r = parseInt(result[1], 16) / 255;
+  const g = parseInt(result[2], 16) / 255;
+  const b = parseInt(result[3], 16) / 255;
+
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+
+  // Convert to HSL values
+  let h;
+  let s;
+  let l = (max + min) / 2;
+
+  if (max === min) {
     h = s = 0; // achromatic
   } else {
-    var d = max - min;
+    const d = max - min;
     s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
     switch (max) {
       case r:
@@ -233,33 +231,23 @@ function hexToHSL(hex) {
     }
     h /= 6;
   }
-  var HSL = new Object();
-  HSL['h'] = h;
-  HSL['s'] = s;
-  HSL['l'] = l;
-  return HSL;
+
+  return {
+    h: parseFloat(h.toFixed(2)) * 100,
+    s: parseFloat(s.toFixed(2)) * 100,
+    l: parseFloat(l.toFixed(2)) * 100,
+  };
 }
 
-function generateShadesColors(hexColor) {
-  const hexColorHSL = hexToHSL(hexColor);
-
-  const firstShade = 'hsl(' + parseFloat(hexColorHSL.h.toFixed(2)) * 100 + ', ' + parseFloat(hexColorHSL.s.toFixed(2)) * 100 + '%, ' + 90 + '%)';
-  const secondShade = 'hsl(' + parseFloat(hexColorHSL.h.toFixed(2)) * 100 + ', ' + parseFloat(hexColorHSL.s.toFixed(2)) * 100 + '%, ' + 70 + '%)';
-  const thirdShade = 'hsl(' + parseFloat(hexColorHSL.h.toFixed(2)) * 100 + ', ' + parseFloat(hexColorHSL.s.toFixed(2)) * 100 + '%, ' + 50 + '%)';
-  const fourthShade = 'hsl(' + parseFloat(hexColorHSL.h.toFixed(2)) * 100 + ', ' + parseFloat(hexColorHSL.s.toFixed(2)) * 100 + '%, ' + 30 + '%)';
-  const fifthShade = 'hsl(' + parseFloat(hexColorHSL.h.toFixed(2)) * 100 + ', ' + parseFloat(hexColorHSL.s.toFixed(2)) * 100 + '%, ' + 10 + '%)';
-
-  const shades = [firstShade, secondShade, thirdShade, fourthShade, fifthShade];
-
-  console.log('shades', shades);
-  return shades;
+function generateShadesColors(hexColor, shades = [90, 70, 50, 30, 10]) {
+  const { h, s } = hexToHSL(hexColor);
+  return shades.map((shade) => {
+    return `hsl(${h}, ${s}%, ${shade}%)`;
+  });
 }
 
 function generateAnaloguesColors(hexColor) {
-  const hexColorHSL = hexToHSL(hexColor);
-  const h = parseFloat(hexColorHSL.h.toFixed(2)) * 100;
-  const s = parseFloat(hexColorHSL.s.toFixed(2)) * 100;
-  const l = parseFloat(hexColorHSL.l.toFixed(2)) * 100;
+  const { h, s, l } = hexToHSL(hexColor);
 
   function correctiveHue(x) {
     if (h + x > 360) {
@@ -285,21 +273,19 @@ function generateAnaloguesColors(hexColor) {
     }
   }
 
-  const firstAnalogues = 'hsl(' + correctiveHue(-60) + ', ' + correctiveSat(-15) + '%, ' + correctiveLight(10) + '%)';
-  const secondAnalogues = 'hsl(' + correctiveHue(-30) + ', ' + correctiveSat(15) + '%, ' + correctiveLight(10) + '%)';
-  const thirdAnalogues = 'hsl(' + h + ', ' + s + '%, ' + l + '%)';
-  const fourthAnalogues = 'hsl(' + correctiveHue(30) + ', ' + correctiveSat(-15) + '%, ' + correctiveLight(10) + '%)';
-  const fifthAnalogues = 'hsl(' + correctiveHue(60) + ', ' + correctiveSat(15) + '%, ' + correctiveLight(10) + '%)';
-
-  const analogues = [firstAnalogues, secondAnalogues, thirdAnalogues, fourthAnalogues, fifthAnalogues];
-
-  console.log('analogues', analogues);
-
-  return analogues;
+  return [
+    [correctiveHue(-60), correctiveSat(-15), correctiveLight(10)],
+    [correctiveHue(-30), correctiveSat(15), correctiveLight(10)],
+    [h, s, l],
+    [correctiveHue(30), correctiveSat(-15), correctiveLight(10)],
+    [correctiveHue(60), correctiveSat(15), correctiveLight(10)],
+  ].map(([h, s, l]) => {
+    return `hsl(${h}, ${s}%, ${l}%)`;
+  });
 }
 
-generateShadesColors('#ed6ea0');
-generateAnaloguesColors('#ed6ea0');
+// Generate some fun range of colors derived from this base color
+const colors = generateAnaloguesColors('#ed6ea0');
 
 // We randomize the class names before so it looks a little different every time
 const classNames = shuffleArray(SHAPE_CLASS_NAMES);
@@ -313,7 +299,7 @@ for (let i = 0; i < randomRange(MIN_SHAPE_COUNT, MAX_SHAPE_COUNT); i += 1) {
       height: SHAPE_HEIGHT,
       randomness: SHAPE_RANDOMNESS,
       className: classNames[i % classNames.length],
-      colors: generateAnaloguesColors('#ed6ea0'),
+      colors,
     }),
   );
 }
