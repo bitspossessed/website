@@ -29,8 +29,8 @@ const SHAPE_HEIGHT = 250;
 const SHAPE_RANDOMNESS = 50;
 
 // Number of random shapes per page. This is a randomized range.
-const MIN_SHAPE_COUNT = 0;
-const MAX_SHAPE_COUNT = 5;
+const MIN_SHAPE_COUNT = 1;
+const MAX_SHAPE_COUNT = 4;
 
 // Define in which rhythm shapes can change. This is a randomized range.
 const MIN_SHAPE_CHANGE = 1000 * 1; // in ms
