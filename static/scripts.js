@@ -21,16 +21,16 @@ const SHAPE_CLASS_NAMES = [
 
 // Dimensions of each shape. Note that they're responsive and the sizes will
 // change depending on the screen.
-const SHAPE_WIDTH = 250;
-const SHAPE_HEIGHT = 250;
+const SHAPE_WIDTH = 500;
+const SHAPE_HEIGHT = 500;
 
 // Randomness factor for each shape. The higher the more distorted it will get,
 // the lower it will look like a square.
-const SHAPE_RANDOMNESS = 50;
+const SHAPE_RANDOMNESS = 100;
 
 // Number of random shapes per page. This is a randomized range.
 const MIN_SHAPE_COUNT = 1;
-const MAX_SHAPE_COUNT = 4;
+const MAX_SHAPE_COUNT = 5;
 
 // Define in which rhythm shapes can change. This is a randomized range.
 const MIN_SHAPE_CHANGE = 1000 * 1; // in ms
@@ -198,95 +198,6 @@ function getShapeElement(options) {
   return svg;
 }
 
-function hexToHSL(hex) {
-  // Extract hex-values and convert to 0.0 - 1.0 RGB ranges
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  const r = parseInt(result[1], 16) / 255;
-  const g = parseInt(result[2], 16) / 255;
-  const b = parseInt(result[3], 16) / 255;
-
-  const max = Math.max(r, g, b);
-  const min = Math.min(r, g, b);
-
-  // Convert to HSL values
-  let h;
-  let s;
-  let l = (max + min) / 2;
-
-  if (max === min) {
-    h = s = 0; // achromatic
-  } else {
-    const d = max - min;
-    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-    switch (max) {
-      case r:
-        h = (g - b) / d + (g < b ? 6 : 0);
-        break;
-      case g:
-        h = (b - r) / d + 2;
-        break;
-      case b:
-        h = (r - g) / d + 4;
-        break;
-    }
-    h /= 6;
-  }
-
-  return {
-    h: parseFloat(h.toFixed(2)) * 100,
-    s: parseFloat(s.toFixed(2)) * 100,
-    l: parseFloat(l.toFixed(2)) * 100,
-  };
-}
-
-function generateShadesColors(hexColor, shades = [90, 70, 50, 30, 10]) {
-  const { h, s } = hexToHSL(hexColor);
-  return shades.map((shade) => {
-    return `hsl(${h}, ${s}%, ${shade}%)`;
-  });
-}
-
-function generateAnaloguesColors(hexColor) {
-  const { h, s, l } = hexToHSL(hexColor);
-
-  function correctiveHue(x) {
-    if (h + x > 360) {
-      return h + x - 360;
-    } else {
-      return h + x;
-    }
-  }
-
-  function correctiveSat(x) {
-    if (s + x > 100) {
-      return s + x - 100;
-    } else {
-      return s + x;
-    }
-  }
-
-  function correctiveLight(x) {
-    if (l + x > 100) {
-      return l - x;
-    } else {
-      return l + x;
-    }
-  }
-
-  return [
-    [correctiveHue(-60), correctiveSat(-15), correctiveLight(10)],
-    [correctiveHue(-30), correctiveSat(15), correctiveLight(10)],
-    [h, s, l],
-    [correctiveHue(30), correctiveSat(-15), correctiveLight(10)],
-    [correctiveHue(60), correctiveSat(15), correctiveLight(10)],
-  ].map(([h, s, l]) => {
-    return `hsl(${h}, ${s}%, ${l}%)`;
-  });
-}
-
-// Generate some fun range of colors derived from this base color
-const colors = generateAnaloguesColors('#ed6ea0');
-
 // We randomize the class names before so it looks a little different every time
 const classNames = shuffleArray(SHAPE_CLASS_NAMES);
 
@@ -299,7 +210,7 @@ for (let i = 0; i < randomRange(MIN_SHAPE_COUNT, MAX_SHAPE_COUNT); i += 1) {
       height: SHAPE_HEIGHT,
       randomness: SHAPE_RANDOMNESS,
       className: classNames[i % classNames.length],
-      colors,
+      colors: [COLORS.electricViolet, COLORS.persianBlue],
     }),
   );
 }
