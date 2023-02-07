@@ -3,10 +3,10 @@
 
 # Members
 
-<ul>
+<div class="grid-container">
   {% for member in site.members %}
-  <li>
+  <div class="grid-item">
     {{ member.name }}
-  </li>
+  </div>
   {% endfor %}
-</ul>
+</div>

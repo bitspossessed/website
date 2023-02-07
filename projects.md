@@ -3,10 +3,10 @@
 
 # Projects
 
-<ul>
+<div class="grid-container grid-container-projects">
   {% for project in site.projects %}
-  <li>
+  <div class="grid-item">
     {{ project.title }}
-  </li>
+  </div>
   {% endfor %}
-</ul>
+</div>

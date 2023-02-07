@@ -2,7 +2,7 @@
   --color-main: white;
   --color-purple: rgb(177, 0, 255);
   --color-blue: rgb(17, 22, 200);
-  --color-black: rgb(2, 0, 36);
+  --color-black: rgb(2, 0, 36, 0.8);
 }
 
 html,
@@ -17,7 +17,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
   color: var(--color-main);
-  font-family: "Share Tech Mono", monospace;
+  font-family: 'Share Tech Mono', monospace;
   font-size: 18px;
 }
 
@@ -134,4 +134,21 @@ svg {
 .intro {
   font-size: 200px;
   text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1rem;
+}
+
+.grid-container-projects {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.grid-item {
+  border-radius: 1rem;
+  mix-blend-mode: color-dodge;
+  background: var(--color-black);
+  padding: 1.5rem;
 }
