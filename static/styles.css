@@ -142,7 +142,7 @@ svg {
   grid-gap: 1rem;
 }
 
-.grid-container-projects {
+.grid-container-2-rows {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
@@ -151,4 +151,17 @@ svg {
   mix-blend-mode: color-dodge;
   background: var(--color-black);
   padding: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.member-img {
+  width: 100%;
+}
+
+.container-content {
+  margin-bottom: 15px;
+}
+
+.container-content ul {
+  list-style: none;
 }

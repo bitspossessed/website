@@ -8,6 +8,7 @@ description: Some description about us
 collections:
   - projects
   - members
+  - links
 
 # Use a different markdown renderer
 markdown: kramdown
@@ -15,6 +16,6 @@ markdown: kramdown
 # Set `default` layout for all pages
 defaults:
   - scope:
-      path: ""
+      path: ''
     values:
-      layout: "default"
+      layout: 'default'

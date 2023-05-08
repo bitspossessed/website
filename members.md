@@ -3,10 +3,20 @@
 
 # Members
 
-<div class="grid-container">
-  {% for member in site.members %}
+{% for member in site.members %}
+
   <div class="grid-item">
-    {{ member.name }}
+    <div class="container-content">
+      {{ member.name }}
+    </div>
+    <div class="container-content">
+      {{ member.image }}
+    </div>
+    <div class="container-content">
+      {{ member.sentences }}
+    </div>
+    <div class="container-content">
+      {{ member.links }}
+    </div>
   </div>
   {% endfor %}
-</div>
