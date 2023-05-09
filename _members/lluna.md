@@ -1,6 +1,6 @@
 ---
 name: lluna creixent
-image: <img src="/static/images/3c6a3958f01db8ee9a92a7c01.jpeg" alt="member image" class="member-img" />
+image: <img src="./static/images/3c6a3958f01db8ee9a92a7c01.jpeg" alt="member image" class="member-img" />
 sentences:
   computer engineer attracted to [computer networks and distributed systems], [free sofware and social projects], [technical sovereignty]<br><br> with
   experience in software development, service and network maintenance, research [1], IT support for community organizations and workshop facilitation about

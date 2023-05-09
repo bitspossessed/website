@@ -1,6 +1,6 @@
 ---
 name: jacque
-image: <img src="/static/images/757ede249bc70d6e78e85d300.jpeg" alt="member image" class="member-img" />
+image: <img src="./static/images/757ede249bc70d6e78e85d300.jpeg" alt="member image" class="member-img" />
 sentences:
   telecommunication engineer interested in technology as a tool for social change. Worked in IoT but lately focus in software engineering. Currently studying a
   master in Robotics and Engineering.<br><br>steping into the sound engineering world, to support the struggles in the community.
