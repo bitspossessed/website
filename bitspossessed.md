@@ -1,7 +1,7 @@
 ---
 ---
 
-# About
+# Bitspossesed
 
   <div class="grid-item">
     We are Bitspossessed, a software developers collective. We support people, organizations, and communities to realize technologically-driven ideas.<br><br>
