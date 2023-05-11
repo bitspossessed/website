@@ -8,7 +8,6 @@ description: Some description about us
 collections:
   - projects
   - members
-  - links
 
 # Use a different markdown renderer
 markdown: kramdown

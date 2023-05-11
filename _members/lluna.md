@@ -1,8 +1,8 @@
 ---
 name: lluna creixent
 image:
-  <picture> <source type="image/webp" srcset="./static/images/3c6a3958f01db8ee9a92a7c01.webp"> <source type="image/jpeg"
-  srcset="./static/images/3c6a3958f01db8ee9a92a7c01.jpeg"> <img src="./static/images/3c6a3958f01db8ee9a92a7c01.jpeg"  alt="member image" class="member-img">
+  <picture> <source type="image/webp" srcset="./static/images/13c6a3958f01db8ee9a92a7c01.webp"> <source type="image/jpeg"
+  srcset="./static/images/13c6a3958f01db8ee9a92a7c01.jpeg"> <img src="./static/images/13c6a3958f01db8ee9a92a7c01.jpeg"  alt="member image" class="member-img">
   </picture>
 sentences:
   computer engineer attracted to [computer networks and distributed systems], [free sofware and social projects], [technical sovereignty]<br><br> with
