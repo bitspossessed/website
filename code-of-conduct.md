@@ -12,12 +12,14 @@
 
 We expect members and collaborators of the bitspossessed collective to remain mindful of, and take responsibility for, their speech and behavior. This includes:
 
-- Acting out of respect for others.
-- Actively listening to others and not dominating discussions.
-- Respecting physical and emotional boundaries.
-- Attempt collaboration before conflict.
-- Be mindful of your surroundings and of your fellow participants. Alert moderators if you notice a dangerous situation, someone in distress, or violations of
-this Code of Conduct, even if they seem inconsequential.
+<ul>
+  <li>Acting out of respect for others.</li>
+  <li>Actively listening to others and not dominating discussions.</li>
+  <li>Respecting physical and emotional boundaries.</li>
+  <li>Attempt collaboration before conflict.</li>
+  <li>Be mindful of your surroundings and of your fellow participants. Alert moderators if you notice a dangerous situation, someone in distress, or violations of
+this Code of Conduct, even if they seem inconsequential.</li>
+</ul>
 </div>
 
   <div class="grid-item grid-item-mb">
