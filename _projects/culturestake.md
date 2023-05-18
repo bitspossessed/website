@@ -1,5 +1,5 @@
 ---
-title: Culturestake
-link: <a href="https://culturestake.org/" target="_blank">Culturestake</a>
-text: <a href="https://github.com/bitspossessed/culturestake" target="_blank">CultureStake on GitHub</a>
+title: CultureStake
+link: <a href="https://culturestake.org/" target="_blank">CultureStake</a>
+text: CultureStake on GitHub: <a href="https://github.com/bitspossessed/culturestake" target="_blank">https://github.com/bitspossessed/culturestake</a>
 ---
