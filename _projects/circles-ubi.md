@@ -7,5 +7,5 @@ text: >
   neighborhoods. The initial work has mostly been carried by the Bitspossessed developer collective and the Circles Cooperative in Berlin. If you are interested
   in more information about Circles and its philosophy, you can read our official <a href="https://joincircles.net/faq/" target="_blank">FAQ</a> and the <a
   href="https://handbook.joincircles.net/docs/developers/whitepaper/" target="_blank">whitepaper</a>.<br><br>
-  Circles on GitHub : <a href="https://github.com/CirclesUBI/" target="_blank">https://github.com/CirclesUBI</a>
+  Circles on GitHub: <a href="https://github.com/CirclesUBI/" target="_blank">https://github.com/CirclesUBI</a>
 ---
