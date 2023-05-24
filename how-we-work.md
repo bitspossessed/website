@@ -12,8 +12,8 @@
 
 <div class="grid-item grid-item-mb">
   <h2>Roles</h2>
+  We created a non-hierarchical structure with clear and healthy roles that are rotated regularly.
   <ul>
-    <li>We created a non-hierarchical structure with clear and healthy roles that are rotated regularly.</li>
     <li>Navigator / Collective Tasks Coordination</li>
     <li>Warp drive engineer / Infrastructure / house builder / Collective Dev-Ops</li>
     <li>Finances / Pre-post-scarcity planning</li>

@@ -55,20 +55,4 @@ This code of conduct and its related procedures also apply to unacceptable behav
 the potential to adversely affect the safety and well-being of community members.
 
   </div>
-
-  <div class="grid-item grid-item-mb">
-  <h2>Reporting</h2>
-
-If you are subject to or witness unacceptable behavior, or have any other concerns, please contact our moderator as soon as possible via email at
-<a href = "mailto: counsellor@bitspossessed.org">counsellor@bitspossessed.org</a> which is monitored by the Spaceship Councellor, a rotative role for
-<a href="https://bitspossessed.org/" target="_blank">bitspossessed</a> collective members.
-
-Moderator(s) will follow <a href="https://geekfeminism.wikia.org/wiki/Conference_anti-harassment/Responding_to_reports" target="_blank">internal guidelines</a>
-for enforcing our Code of Conduct. All complaints will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to
-the circumstances. Moderators are obligated to maintain confidentiality with regard to the reporter of an incident.
-
-Additionally, our moderator(s) are available to help community members engage with local law enforcement or to otherwise help those experiencing unacceptable
-behavior feel safe.
-
-  </div>
 </div>
