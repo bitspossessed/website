@@ -1,3 +1,6 @@
+---
+---
+
 # bitspossessed Code of Conduct
 
 <div class="container-medium">

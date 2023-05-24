@@ -1,3 +1,6 @@
+---
+---
+
 # How we work
 
 <div class="container-medium">
