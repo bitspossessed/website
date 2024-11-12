@@ -21,3 +21,22 @@
     </div>
   {% endfor %}
 </div>
+<h2 class="h2-margin-top">Contributors</h2>
+<div class="grid-container">
+  {% for member in site.contributors %}
+    <div class="grid-item">
+      <div class="container-content">
+        {{ member.name }}
+      </div>
+      <div class="container-content">
+        {{ member.image }}
+      </div>
+      <div class="container-content">
+        {{ member.sentences }}
+      </div>
+      <div class="container-content">
+        {{ member.links }}
+      </div>
+    </div>
+  {% endfor %}
+</div>
