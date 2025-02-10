@@ -12,7 +12,7 @@
 
 <div class="grid-item grid-item-mb">
   <h2>Roles</h2>
-  To handle expectations and responsibility within the collective we have defined clear roles. We believe that explicitly documented and transparent roles is an efficicient way to handle expectations and reduce stress and conflict.
+  We created a non-hierarchical structure with clear and healthy roles that are rotated regularly.
 
   <ul>
     <li>Navigator / Collective Tasks Coordination</li>
