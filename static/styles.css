@@ -14,7 +14,12 @@ body {
 }
 
 body {
-  background-image: linear-gradient(180deg, var(--color-purple) 0%, var(--color-blue) 35%, var(--color-black) 100%);
+  background-image: linear-gradient(
+    180deg,
+    var(--color-purple) 0%,
+    var(--color-blue) 35%,
+    var(--color-black) 100%
+  );
   background-size: cover;
   background-attachment: fixed;
   color: var(--color-main);
@@ -252,4 +257,8 @@ nav a {
 a {
   word-wrap: break-word;
   word-break: break-word;
+}
+
+.h2-margin-top {
+  margin-top: 50px;
 }

@@ -13,18 +13,21 @@
 <div class="grid-item grid-item-mb">
   <h2>Roles</h2>
   We created a non-hierarchical structure with clear and healthy roles that are rotated regularly.
+
   <ul>
     <li>Navigator / Collective Tasks Coordination</li>
     <li>Warp drive engineer / Infrastructure / house builder / Collective Dev-Ops</li>
     <li>Finances / Pre-post-scarcity planning</li>
     <li>Spaceship Counsellor / Spock-Hand</li>
-    <li>Fun coordinator / dynamisation / "Fun-raising"</li>
+    <li>Fun coordinator / Dynamisation / "Fun-raising"</li>
     <li>External Communication / Social Media / Website / E-Mail</li>
-    <li>Secretary</li>
-    <li>Moderator</li>
+    <li>Librarian / Secretary</li>
+    <li>Meeting Moderator</li>
     <li>Meetup coordinator</li>
-    <li>Project coordinator</li>
     <li>Repository maintainer</li>
+    <li>Note Taker</li>
+    <li>Project Coordinator</li>
+    <li>Project Finances</li>
   </ul>
 </div>
 
@@ -35,7 +38,7 @@ As we work primarily remote-first, we have virtual office with the following spa
 
   <ul>
     <li>We host many of the services in a Debian Server provided by <a href="https://maadix.net/en/" target="_blank">Maadix</a>.</li>
-    <li><a href="https://nextcloud.com/" target="_blank">Nextcloud</a>  sharing for files, calendar, contacts, and project borads. We use OnlyOffice for collaborative writting.</li>
+    <li><a href="https://nextcloud.com/" target="_blank">Nextcloud</a>  sharing for files, calendar, contacts, and project boards. We use OnlyOffice for collaborative writting.</li>
     <li><a href="https://rocket.chat/" target="_blank">Rocket.Chat</a> for internal communication.</li>
     <li><a href="https://jitsi.org/" target="_blank">Jitsi</a> for video calls.</li>
     <li><a href="https://hedgedoc.org/" target="_blank">HedgeDoc</a> https://hedgedoc.org/ for collaborative note taking in Markdown.</li>
